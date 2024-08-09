@@ -55,17 +55,6 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@tristanpenman/castv2@~0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@tristanpenman/castv2/-/castv2-0.2.0.tgz#4101eb6ad606585f7c551f3460edf8c4d84b9643"
-  integrity sha512-NOjGu4fkQP9jsg0sqz+BYjDe/wBrdVpC3TtYmt0sZuwVT3UWEFyTYPUblHGH5naGj+2xk6hR94uuKl93yJu4nA==
-  dependencies:
-    debug "^4.1.1"
-    heap-js "^2.2.0"
-    mdns "^2.7.2"
-    protobufjs "^6.8.8"
-    uuid "^8.3.2"
-
 "@types/long@^4.0.1":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
@@ -75,6 +64,11 @@
   version "18.13.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.13.0.tgz#0400d1e6ce87e9d3032c19eb6c58205b0d3f7850"
   integrity sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==
+
+array-find@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/array-find/-/array-find-0.1.1.tgz#dc813845ad5a9afc35cb92b786c878d81b5b82ce"
+  integrity sha512-r40SlXgo1T2nsHx9FZ7Nju4QuQPUffepHeJb/juqVY1T5SVJ8hoDdo7RFHZRhdUf6+LT8s/6tKLjL6H9POMoGQ==
 
 array-find@^1.0.0:
   version "1.0.0"
@@ -108,6 +102,26 @@ buffer-indexof@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-indexof/-/buffer-indexof-1.1.1.tgz#52fabcc6a606d1a00302802648ef68f639da268c"
   integrity sha512-4/rOEg86jivtPTeOUUT61jJO1Ya1TrR/OkqCSZDyq84WJh3LuuiphBYJN+fm5xufIk4XAFcEwte/8WzC8If/1g==
+
+"castv2@npm:@tristanpenman/castv2@~0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tristanpenman/castv2/-/castv2-0.2.0.tgz#4101eb6ad606585f7c551f3460edf8c4d84b9643"
+  integrity sha512-NOjGu4fkQP9jsg0sqz+BYjDe/wBrdVpC3TtYmt0sZuwVT3UWEFyTYPUblHGH5naGj+2xk6hR94uuKl93yJu4nA==
+  dependencies:
+    debug "^4.1.1"
+    heap-js "^2.2.0"
+    mdns "^2.7.2"
+    protobufjs "^6.8.8"
+    uuid "^8.3.2"
+
+chromecast-scanner@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/chromecast-scanner/-/chromecast-scanner-0.5.0.tgz#01296a3e5d130cce34974eb509cbbc7d6f78dd3d"
+  integrity sha512-xVQA3LjIT9uXIXcZ61PskEVsPk1qylzIk9AtJG8aUqvqAuLIY5nMHSt89Bkhcg9k+aMAnCj1xwCaSCmypsT9Pg==
+  dependencies:
+    array-find "^0.1.1"
+    multicast-dns "^4.0.0"
+    xtend "^4.0.0"
 
 commander@2.9.0:
   version "2.9.0"
@@ -353,6 +367,13 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+multicast-dns@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/multicast-dns/-/multicast-dns-4.0.1.tgz#abf022fc866727055a9e0c2bc98097f5ebad97a2"
+  integrity sha512-e1WjgIOzW2lzbq4CnGDaB+5FiY5g5maPVIUhdbsoWl64lKBhqa68Gsi3MIglEf0Vdhux4vVQUKyVP6s//r1B1A==
+  dependencies:
+    thunky "^0.1.0"
+
 multicast-dns@^6.1.0:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/multicast-dns/-/multicast-dns-6.2.3.tgz#a0ec7bd9055c4282f790c3c82f4e28db3b31b229"
@@ -409,6 +430,11 @@ supports-color@3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
+thunky@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/thunky/-/thunky-0.1.0.tgz#bf30146824e2b6e67b0f2d7a4ac8beb26908684e"
+  integrity sha512-vquTt/sKNzFqFK8DKLg33U7deg93WKYH4CE2Ul9hOyMCfm7VXgM7GJQRpPAgnmgnrf407Fcq8TQVEKlbavAu+A==
+
 thunky@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
@@ -430,3 +456,8 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+xtend@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
+  integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==

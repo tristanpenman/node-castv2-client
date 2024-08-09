@@ -5,7 +5,6 @@ var DefaultMediaReceiver  = require(MYPATH).DefaultMediaReceiver;
 var scanner               = require('chromecast-scanner');
 
 function ondeviceup(host, callback) {
-
   var client = new Client();
 
   client.connect(host, function() {
@@ -23,11 +22,11 @@ function ondeviceup(host, callback) {
         metadata: {
           type: 0,
           metadataType: 0,
-          title: "Big Buck Bunny", 
+          title: "Big Buck Bunny",
           images: [
             { url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg' }
           ]
-        }        
+        }
       };
 
       player.on('status', function(status) {
@@ -51,7 +50,7 @@ function ondeviceup(host, callback) {
                 callback(0); //Done
               });
             }, 2000);
-              
+
           });
         }, 5000);
 
@@ -82,11 +81,12 @@ function findAndConnect(callback) {
 module.exports = findAndConnect;
 
 //main
-var main = function () { 
+const main = function () {
   findAndConnect(function(rc){
     process.exit(rc);
   });
-} 
-if (require.main === module) { 
-    main(); 
+}
+
+if (require.main === module) {
+  main();
 }

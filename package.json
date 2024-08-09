@@ -9,7 +9,7 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "@tristanpenman/castv2": "~0.2.0",
+    "castv2": "npm:@tristanpenman/castv2@~0.2.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {

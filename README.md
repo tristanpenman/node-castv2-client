@@ -1,30 +1,28 @@
-castv2-client
-=============
-### A Chromecast client based on the new (CASTV2) protocol
+# castv2-client
+
+A Chromecast client based on the new (CASTV2) protocol.
 
 This module implements a Chromecast client over the new (CASTV2) protocol. A sender app for the `DefaultMediaReceiver` application is provided, as well as an `Application` base class and implementations of the basic protocols (see the `controllers` directory) that should make implementing custom senders a breeze.
 
-This implementation tries to stay close and true to the protocol. For details about protocol internals please see [https://github.com/thibauts/node-castv2](https://github.com/thibauts/node-castv2#protocol-description). 
+This implementation tries to stay close and true to the protocol. For details about protocol internals please see [https://github.com/thibauts/node-castv2](https://github.com/thibauts/node-castv2#protocol-description).
 
 For advanced use, like using [subtitles](https://github.com/thibauts/node-castv2-client/wiki/How-to-use-subtitles-with-the-DefaultMediaReceiver-app) with the DefaultMediaReceiver check the [wiki](https://github.com/thibauts/node-castv2-client/wiki).
 
-Installation
-------------
+## Installation
 
 ``` bash
 $ npm install castv2-client
 ```
 
-On windows, to avoid native modules dependencies, use
+On Windows, to avoid native modules dependencies, use
 
 ``` bash
 $ npm install castv2-client --no-optional
 ```
 
-Examples
---------
+## Examples
 
-###Launching a stream on the device
+### Launching a stream on the device
 
 ``` javascript
 var Client                = require('castv2-client').Client;
@@ -42,7 +40,6 @@ browser.on('serviceUp', function(service) {
 browser.start();
 
 function ondeviceup(host) {
-
   var client = new Client();
 
   client.connect(host, function() {
@@ -60,11 +57,11 @@ function ondeviceup(host) {
         metadata: {
           type: 0,
           metadataType: 0,
-          title: "Big Buck Bunny", 
+          title: "Big Buck Bunny",
           images: [
             { url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg' }
           ]
-        }        
+        }
       };
 
       player.on('status', function(status) {
@@ -82,28 +79,49 @@ function ondeviceup(host) {
             //
           });
         }, 15000);
-
       });
-
     });
-    
   });
 
   client.on('error', function(err) {
     console.log('Error: %s', err.message);
     client.close();
   });
-
 }
 ```
 
-###Other examples
+### Other examples
 
 Check the examples directory.
 
+## Troubleshooting
 
-Contributors
-------------
+If while installing, you see an error like this:
+
+```
+gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+make: Entering directory '/home/tristan/Workspace/_forks/node-castv2-client/node_modules/mdns/build'
+  CXX(target) Release/obj.target/dns_sd_bindings/src/dns_sd.o
+In file included from ../src/dns_sd.cpp:1:
+../src/mdns.hpp:32:10: fatal error: dns_sd.h: No such file or directory
+   32 | #include <dns_sd.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+```
+
+You will need to install libavahi:
+
+```
+sudo apt-get install libavahi-compat-libdnssd-dev
+```
+
+## Contributors
 
 * [xat](https://github.com/xat) (Simon Kusterer)
 * [angelnu](https://github.com/angelnu) (Angel Nunez Mencias)
+
+## License
+
+This code is licensed under the MIT License.
+
+See the LICENSE file for more information.
